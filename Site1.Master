@@ -1,0 +1,112 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="FinalProject.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style>
+                ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
+
+.center {
+    text-align: center;
+    align-content: center;
+}
+
+.divS {
+    margin: auto;
+    border: red;
+    padding: 10px;
+    background-color: lightgray;
+}
+
+
+body {
+        background-image: url("http://images.unsplash.com/photo-1517524285303-d6fc683dddf8?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjEyMDd9");
+    background-repeat: no-repeat;
+    background-size: 1500px 2000px;
+    font-family: Arial;
+}
+
+table {
+    width: 100%;
+}
+
+    </style>
+
+</head>
+<body style="width: 100%;">
+    <!-- Admin Nav -->
+    <div style="background-color: #333; color: white;" id="adminNav" runat="server">
+        <br /><br />
+        <h1 class="center">Games4u</h1> <br />
+        <div style="float: left; overflow: hidden; width: 65%;">
+            <ul>
+                <li><a href="http://localhost:64700/Store.aspx">Home</a></li>
+                <li><a href="http://localhost:64700/Admin/ManageProducts.aspx">Manage Products</a></li>
+                <li><a href="http://localhost:64700/Admin/ManageCompanies.aspx">Manage Companies</a></li>
+                <li><a href="http://localhost:64700/Admin/ManageCategories.aspx">Manage Categories</a></li>
+                <li><a href="http://localhost:64700/Admin/ManageUsers.aspx">Manage Users</a></li>
+            </ul>
+        </div>
+        <div style="overflow: hidden;">
+            <ul>
+                <li><a href="http://localhost:64700/OrderHistory.aspx">Order History</a></li>
+                <li><a href="http://localhost:64700/Cart.aspx">Cart</a></li>
+                <li><a href='http://localhost:64700/Logout.aspx'>Logout</a></li>
+            </ul>
+        </div>
+
+    </div>
+    <!-- User Nav -->
+    <div style="background-color: #333; color: white;" id="userNav" runat="server">
+        <br />
+        <br />
+        <h1 class="center">Games4u</h1>
+        <br />
+        <div style="float: left; overflow: hidden; width: 65%;">
+            <ul>
+                <li><a class="active" href="http://localhost:64700/Store.aspx">Home</a></li>
+                <li id="orderHistory" runat="server"></li>
+
+            </ul>
+        </div>
+        <div style="overflow: hidden;">
+            <ul>
+                <li><a href="http://localhost:64700/Cart.aspx">Cart</a></li>
+                <li id="login" runat="server"></li>
+            </ul>
+        </div>
+    </div>
+    <form id="form1" runat="server">
+        <div class="divS">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>
